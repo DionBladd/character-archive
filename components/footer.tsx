@@ -109,7 +109,7 @@ export default function Footer({ contactRef }: { contactRef: React.RefObject<HTM
             className="text-gray-500 hover:text-blue-400 dark:hover:text-blue-400 transition-colors cursor-pointer"
             onClick={() => window.open("https://github.com/DionBladd", "_blank")}
           >
-            © {new Date().getFullYear()} Echoes Of Us by DionBladd
+            © {new Date().getFullYear()} Echoes Of Us by DionBladd. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href="#" className="text-gray-500 hover:text-blue-400 dark:hover:text-blue-400 transition-colors">
