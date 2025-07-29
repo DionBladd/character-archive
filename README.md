@@ -39,7 +39,7 @@ Character Archive is a web-based platform built to help creators — writers, ar
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/character-archive.git
+git clone https://github.com/DionBladd/character-archive.git
 
 # Install dependencies
 cd character-archive
