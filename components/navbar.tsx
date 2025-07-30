@@ -3,13 +3,12 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import { Menu, ShoppingCart } from "lucide-react"
+import { Menu} from "lucide-react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { cn } from "@/lib/utils"
-import ThemeSwitch from "@/components/themeswitch"
-import { useRouter } from 'next/navigation'
+import { Separator } from "@radix-ui/react-separator"
 interface NavbarProps {
   activeSection: string
 }
@@ -49,7 +48,7 @@ export default function Navbar({ activeSection }: NavbarProps) {
           <div className="w-10 h-10 rounded-full bg-transparent dark:bg-primary/20 flex items-center justify-center">
             <Image src="/logo.png" alt="Logo" width={40} height={40}  />
           </div>
-          <span className="font-bold text-xl text-sky-800/70 dark:text-purple-800/70">
+          <span className="font-bold text-xl text-white dark:text-purple-800/70">
             Echoes Of Us
           </span>
         </Link>
@@ -63,7 +62,7 @@ export default function Navbar({ activeSection }: NavbarProps) {
                 "text-sm font-medium transition-colors",
                 activeSection === link.id 
                   ? "text-blue-500 dark:text-blue-500" 
-                  : "text-gray-800 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
+                  : "text-white dark:text-gray-300 hover:text-slate-400 dark:hover:text-gray-100"
               )}
             >
               {link.label}
@@ -71,20 +70,13 @@ export default function Navbar({ activeSection }: NavbarProps) {
           ))}
         </nav>
 
-        <div className="flex items-center space-x-4">
-
-
-          <div className="text-gray-900 dark:text-gray-300 cursor-pointer">
-            <ThemeSwitch />
-          </div>
-        </div>
 
         <Sheet>
           <SheetTrigger asChild>
             <Button 
               variant="ghost" 
               size="icon" 
-              className="md:hidden text-gray-900 dark:text-white bg-gray-100 dark:bg-transparent cursor-pointer"
+              className="md:hidden text-white hover:bg-slate-800/5 hover:text-slate-400 dark:text-white bg-tranaparent dark:bg-transparent cursor-pointer"
             >
               <Menu className="h-6 w-6" />
               <span className="sr-only">Toggle menu</span>
@@ -92,19 +84,20 @@ export default function Navbar({ activeSection }: NavbarProps) {
           </SheetTrigger>
           <SheetContent 
             side="right" 
-            className="bg-gray-50 dark:bg-background border-gray-200 dark:border-border"
+            className="bg-black dark:bg-background border-black dark:border-border"
           >
             <div className="flex flex-col h-full">
-              <div className="flex items-center space-x-2">
-                <div className="w-10 h-10 rounded-full bg-gray-100 dark:bg-primary/20 flex items-center justify-center">
+              <div className="flex items-center space-x-2 ml-25 mt-3">
+                <div className=" w-10 h-10 rounded-full bg-black dark:bg-primary/20 flex items-center justify-center">
                   <Image src="/logo.png" alt="Logo" width={40} height={40} />
                 </div>
-                <span className="font-bold text-xl text-gray-900 dark:text-white">
+                <span className="font-bold text-xl text-white dark:text-white">
                   Echoes Of Us
                 </span>
               </div>
+              <Separator className="my-4 h-1 bg-gradient-to-r from-transparent via-gray-500 to-transparent" />
 
-              <nav className="flex flex-col space-y-6 mt-8">
+              <nav className="flex flex-col space-y-6 mt-8 ml-5">
                 {navLinks.map((link) => (
                   <Link
                     key={link.id}
@@ -113,7 +106,7 @@ export default function Navbar({ activeSection }: NavbarProps) {
                       "text-lg font-medium transition-colors flex items-center",
                       activeSection === link.id 
                         ? "text-blue-500 dark:text-blue-500" 
-                        : "text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100"
+                        : "text-white dark:text-gray-300 hover:text-slate-500 dark:hover:text-slate-300"
                     )}
                   >
                     {link.label}
@@ -121,11 +114,6 @@ export default function Navbar({ activeSection }: NavbarProps) {
                 ))}
               </nav>
 
-              <div className="mt-auto pb-8">
-                <Button className="w-full bg-gray-900 text-white hover:bg-gray-800 dark:bg-gradient-to-r dark:from-violet-500 dark:to-purple-700  dark:hover:bg-gradient-to-r dark:hover:from-violet-600 dark:hover:to-purple-800 ">
-                  Contact Us
-                </Button>
-              </div>
             </div>
           </SheetContent>
         </Sheet>
