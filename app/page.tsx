@@ -35,42 +35,6 @@ export default function MainPage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsla(0,0%,100%,0.05)_0%,transparent_70%)]" />
         <div className="absolute inset-0 bg-[url('/path/to/subtle-texture.png')] opacity-5 mix-blend-soft-light" />
       </div>
-
-      {/* Animated Header */}
-      <header 
-        className={`sticky top-0 z-20 backdrop-blur-md bg-black/20 border-b border-slate-700/50 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'}`}
-      >
-        <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <div className="text-xl font-bold flex items-center space-x-2 group">
-            <div className="p-2 rounded-lg bg-gradient-to-r from-slate-700 to-slate-800 shadow-lg">
-              <svg
-                className="w-6 h-6 text-gray-300"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-              </svg>
-            </div>
-            <span className="text-gray-300 font-bold tracking-tight">
-              The Archive
-            </span>
-          </div>
-          <nav className="space-x-6 font-medium">
-            <a className="text-gray-400 hover:text-white transition-colors duration-300">
-              Worlds
-            </a>
-            <a className="text-gray-400 hover:text-white transition-colors duration-300">
-              Characters
-            </a>
-            <a className="text-gray-400 hover:text-white transition-colors duration-300">
-              Lore
-            </a>
-          </nav>
-        </div>
-      </header>
-
       {/* Enhanced Main Content */}
       <main 
         className={`flex-grow flex flex-col items-center justify-center text-center px-6 py-24 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}

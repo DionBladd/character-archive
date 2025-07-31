@@ -38,10 +38,10 @@ export default function Navbar({ activeSection }: NavbarProps) {
 
   return (
     <div className={cn(
-      "fixed w-full top-0 z-50 transition-all duration-300 border-b border-gray-800 dark:border-border",
+      "fixed w-full top-0 z-50 transition-all duration-300 dark:border-border",
       isScrolled 
         ? "py-2 bg-slate-200-100 dark:bg-background/80 backdrop-blur-sm" 
-        : "py-4 bg-black dark:bg-background"
+        : "py-4 bg-transparent"
     )}>
       <div className="container mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
